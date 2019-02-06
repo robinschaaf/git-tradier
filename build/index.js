@@ -405,11 +405,12 @@ var Tradier = function () {
     }
   }, {
     key: 'customPost',
-    value: function customPost(path) {
+    value: function customPost(path, parameters) {
       return _axios2.default.post(this._host + path, {
         headers: {
           "Authorization": 'Bearer ' + this.accesstoken
-        }
+        },
+        data: parameters
       }).then(function (response) {
         console.log('YEY POST REPOSNSE!!!', response)
         var data = response;
