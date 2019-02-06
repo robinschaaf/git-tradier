@@ -425,6 +425,7 @@ var Tradier = function () {
         });
       }).catch(function (error) {
         console.log(error);
+        reject(error);
       });
     }
   }, {
