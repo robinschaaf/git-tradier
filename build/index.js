@@ -401,6 +401,9 @@ var Tradier = function () {
         });
       }).catch(function (error) {
         console.log(error);
+        return new Promise(function (resolve, reject) {
+	  reject(error);
+        });
       });
     }
   }, {
@@ -425,7 +428,6 @@ var Tradier = function () {
         });
       }).catch(function (error) {
         console.log(error);
-        reject(error);
       });
     }
   }, {
