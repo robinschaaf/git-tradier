@@ -428,6 +428,10 @@ var Tradier = function () {
         });
       }).catch(function (error) {
         console.log(error);
+        return new Promise(function (resolve, reject) {
+	console.log('rejecting...')
+          reject(error);
+        });
       });
     }
   }, {
