@@ -409,11 +409,10 @@ var Tradier = function () {
   }, {
     key: 'customPost',
     value: function customPost(path, parameters) {
-      return _axios2.default.post(this._host + path, {
+      return _axios2.default.post(this._host + path, parameters, {
         headers: {
           "Authorization": 'Bearer ' + this.accesstoken
-        },
-        data: parameters
+        }
       }).then(function (response) {
         console.log('YEY POST REPOSNSE!!!', response)
         var data = response;
@@ -427,10 +426,10 @@ var Tradier = function () {
           }
         });
       }).catch(function (error) {
-        console.log(error);
+        console.log(error.response);
         return new Promise(function (resolve, reject) {
 	console.log('rejecting...')
-          reject(error);
+          reject(error.response);
         });
       });
     }
